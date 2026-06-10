@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max Hackathon - Bank Designer Demo | Ikigai Digital</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Highlight.js - Atom One Dark Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  
+  <!-- Google Fonts - Inter + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar_component">
+      <div class="navbar_inner">
+        <a href="https://github.com/MaxwellIkigai/max-hackathon" target="_blank" class="nav_brand">
+          <svg width="109" height="41" viewBox="0 0 109 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2)">
+              <path d="M20.1021 33.9938C17.8614 31.5356 16.226 28.5201 15.4171 25.1702C15.0504 23.6566 14.8409 22.0843 14.8351 20.4592C14.8293 18.8341 15.0504 17.2619 15.4112 15.7482C16.9128 15.3786 18.4725 15.1674 20.0846 15.1616C21.6967 15.1557 23.2564 15.3728 24.758 15.7365C28.0869 16.5403 31.0783 18.1888 33.5227 20.4416C37.4918 24.1025 39.9944 29.3532 40.0002 35.2023C40.0002 36.8274 39.7907 38.3997 39.4299 39.9133C37.9283 40.2829 36.3686 40.4941 34.7565 40.5C28.9541 40.5 23.7453 37.989 20.1021 33.9997" fill="url(#paint0_linear_1_2)"/>
+              <path d="M19.8979 7.00621C22.1386 9.46437 23.774 12.4799 24.5829 15.8298C24.9496 17.3434 25.1591 18.9157 25.1649 20.5408C25.1707 22.1659 24.9496 23.7381 24.5888 25.2518C23.0872 25.6214 21.5275 25.8326 19.9154 25.8384C18.3033 25.8443 16.7436 25.6272 15.242 25.2635C11.9131 24.4597 8.92168 22.8112 6.47733 20.5584C2.50818 16.8975 0.00563672 11.6468 -0.000183105 5.79767C-0.000183246 4.17258 0.209332 2.6003 0.570164 1.08668C2.07169 0.71707 3.63141 0.505867 5.24352 0.5C11.0459 0.499999 16.2547 3.01096 19.8979 7.00034" fill="url(#paint1_linear_1_2)"/>
+              <path d="M33.5364 20.559C31.0979 22.8177 28.1065 24.4662 24.7833 25.2817C23.2818 25.6513 21.7221 25.8625 20.11 25.8684C18.4978 25.8742 16.9381 25.6513 15.4366 25.2876C15.0699 23.774 14.8604 22.2017 14.8546 20.5766C14.8488 18.9515 15.0641 17.3792 15.425 15.8656C16.2223 12.5098 17.8577 9.49432 20.0925 7.03029C23.7241 3.02918 28.9329 0.506478 34.7353 0.50061C36.3474 0.50061 37.9071 0.711813 39.4086 1.07555C39.7753 2.58917 39.9848 4.16146 39.9906 5.78654C39.9906 11.6357 37.4997 16.8864 33.5422 20.559" fill="url(#paint2_linear_1_2)"/>
+              <path d="M6.4626 20.4406C8.90112 18.1819 11.8926 16.5334 15.2157 15.7179C16.7172 15.3483 18.277 15.1371 19.8891 15.1312C21.5012 15.1254 23.0609 15.3483 24.5624 15.712C24.9291 17.2257 25.1386 18.7979 25.1444 20.423C25.1502 22.0481 24.9349 23.6204 24.5741 25.134C23.7767 28.4898 22.1414 31.5053 19.9065 33.9693C16.2749 37.9704 11.0661 40.4931 5.26371 40.499C3.6516 40.499 2.09188 40.2878 0.59035 39.9241C0.223698 38.4104 0.0141833 36.8382 0.00836182 35.2131C0.00836106 29.3639 2.49926 24.1132 6.45678 20.4406" fill="url(#paint3_linear_1_2)"/>
+              <path d="M48.5337 10.2785C48.5337 9.23321 49.3941 8.42422 50.4152 8.42422C51.4362 8.42422 52.2694 9.23321 52.2694 10.2785C52.2694 11.3239 51.4089 12.1328 50.4152 12.1328C49.4214 12.1328 48.5337 11.3239 48.5337 10.2785ZM48.8488 13.672H51.9815V26.831H48.8488V13.672Z" fill="white"/>
+              <path d="M54.5747 8.6333H57.6802V19.2592L62.5369 13.672H66.1392L60.9978 19.5471L66.6876 26.831H63.1368L58.986 21.5317L57.6802 22.9921V26.831H54.5747V8.6333Z" fill="white"/>
+              <path d="M67.4482 10.2785C67.4482 9.23321 68.3087 8.42422 69.3267 8.42422C70.3447 8.42422 71.1809 9.23321 71.1809 10.2785C71.1809 11.3239 70.3204 12.1328 69.3267 12.1328C68.3329 12.1328 67.4482 11.3239 67.4482 10.2785ZM67.7603 13.672H70.8931V26.831H67.7603V13.672Z" fill="white"/>
+              <path d="M79.3187 13.3873C81.5365 13.3873 83.0786 14.3538 83.521 15.5809V13.6751H86.6537V24.6404C86.6537 27.4067 86.3659 29.6004 84.4359 31.1154C83.2604 32.0304 81.591 32.5758 79.7883 32.5758C77.3342 32.5758 75.2194 31.9486 73.4198 30.67L74.9346 28.346C76.2647 29.2338 77.6766 29.7822 79.452 29.7822C80.6003 29.7822 81.6455 29.5216 82.3484 28.9974C83.4452 28.1884 83.6028 26.8311 83.6028 25.6554V25.004C83.0271 26.0493 81.5153 26.9371 79.3217 26.9371C75.6133 26.9371 72.7441 24.0405 72.7441 20.2016C72.7441 16.3627 75.6164 13.3873 79.3217 13.3873H79.3187ZM79.7368 24.1708C82.0091 24.1708 83.7573 22.474 83.7573 20.2016C83.7573 17.9291 82.0091 16.2324 79.7368 16.2324C77.4645 16.2324 75.8466 17.9564 75.8466 20.2016C75.8466 22.4468 77.519 24.1708 79.7368 24.1708Z" fill="white"/>
+              <path d="M95.1464 13.3873C97.3642 13.3873 98.9064 14.3538 99.3487 15.5809V13.6751H102.481V26.8341H99.3487V24.9283C98.9064 26.1554 97.3642 27.1219 95.1464 27.1219C91.438 27.1219 88.5688 24.1465 88.5688 20.2561C88.5688 16.3657 91.4411 13.3903 95.1464 13.3903V13.3873ZM95.5645 24.2738C97.8369 24.2738 99.585 22.5498 99.585 20.2531C99.585 17.9564 97.8369 16.2324 95.5645 16.2324C93.2922 16.2324 91.6743 17.9564 91.6743 20.2531C91.6743 22.5498 93.3468 24.2738 95.5645 24.2738Z" fill="white"/>
+              <path d="M104.75 10.2785C104.75 9.23321 105.611 8.42422 106.629 8.42422C107.647 8.42422 108.483 9.23321 108.483 10.2785C108.483 11.3239 107.623 12.1328 106.629 12.1328C105.635 12.1328 104.75 11.3239 104.75 10.2785ZM105.063 13.672H108.195V26.831H105.063V13.672Z" fill="white"/>
+            </g>
+            <defs>
+              <linearGradient id="paint0_linear_1_2" x1="14.9334" y1="40.5" x2="40.0001" y2="40.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DFFFF" stop-opacity="0.1"/><stop offset="1" stop-color="#2DFFFF"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_1_2" x1="25.0666" y1="0.89448" x2="0.420985" y2="1.6852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DFFFF" stop-opacity="0.1"/><stop offset="1" stop-color="#2DFFFF"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_1_2" x1="39.9993" y1="25.8333" x2="39.9993" y2="1.29998" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DFFFF" stop-opacity="0.1"/><stop offset="1" stop-color="#2DFFFF"/>
+              </linearGradient>
+              <linearGradient id="paint3_linear_1_2" x1="-0.000300517" y1="15.1667" x2="0.405957" y2="40.4935" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DFFFF" stop-opacity="0.1"/><stop offset="1" stop-color="#2DFFFF"/>
+              </linearGradient>
+              <clipPath id="clip0_1_2"><rect width="109" height="41" fill="white"/></clipPath>
+            </defs>
+          </svg>
+        </a>
+        <span class="navbar_tagline">Bank Designer — Live Demo</span>
+      </div>
+      <div class="navbar_divider"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- LEFT: Prompt -->
+      <section class="panel prompt-panel">
+        <div class="panel-header">
+          <span class="panel-label">Your Prompt</span>
+        </div>
+        <div class="panel-content">
+          <textarea 
+            id="prompt-input" 
+            class="prompt-textarea" 
+            placeholder="Describe your bank app... e.g. 'Build a wealth bank with navy + gold palette, home loans and savings'"
+          ></textarea>
+          
+          <div class="preset-chips">
+            <button class="chip" data-segment="wealth">Wealth Bank (Navy + Gold)</button>
+            <button class="chip" data-segment="mass-market">Mass-Market (Green + Blue)</button>
+            <button class="chip" data-segment="neobank">Neobank (Purple Gradient)</button>
+            <button class="chip" data-segment="kenya">Kenya Transaction Bank</button>
+          </div>
+          
+          <button id="generate-btn" class="generate-btn">Generate App</button>
+
+          <!-- Generation Steps -->
+          <div id="gen-steps" class="gen-steps" style="display:none">
+            <div class="gen-step" id="step-analyse">
+              <span class="step-icon">◎</span>
+              <span class="step-label">Analyzing requirements</span>
+            </div>
+            <div class="gen-step" id="step-tokens">
+              <span class="step-icon">◎</span>
+              <span class="step-label">Applying design tokens</span>
+            </div>
+            <div class="gen-step" id="step-build">
+              <span class="step-icon">◎</span>
+              <span class="step-label">Building components</span>
+            </div>
+          </div>
+
+          <div class="history-section">
+            <div class="history-title">History</div>
+            <div id="history-list" class="history-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CENTER: Code -->
+      <section class="panel code-panel">
+        <div class="panel-header">
+          <span class="panel-label">Generated Code</span>
+          <div class="panel-actions">
+            <button id="copy-btn" class="panel-btn" title="Copy">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span>Copy</span>
+            </button>
+          </div>
+        </div>
+        <div class="code-loading-indicator" id="code-loading"></div>
+        <div class="panel-content">
+          <div class="code-block">
+            <pre><code id="code-display" class="language-html"><!-- Generated bank app code will appear here --></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Preview -->
+      <section class="panel preview-panel">
+        <div class="panel-header" style="width: 100%; max-width: 380px;">
+          <span class="panel-label">Live Preview</span>
+          <div class="panel-actions">
+            <button id="reset-btn" class="panel-btn" title="Reset">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
+              </svg>
+              <span>Reset</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="iphone-frame">
+          <div class="iphone-notch"></div>
+          <div class="iphone-screen">
+            <div class="preview-placeholder" id="preview-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+              <p>Your bank app will appear here</p>
+            </div>
+            <iframe id="preview-iframe" style="display:none;"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+
+  <script>
+    // ========== BANK TEMPLATES (NO BACKEND) ==========
+    const BANK_TEMPLATES = {
+      wealth: {
+        name: "Wealth Bank",
+        tokens: {
+          colorBrand: "#1E3A5F",
+          colorAccent: "#d4af37",
+          fontDisplay: "'Playfair Display', Georgia, serif",
+          space: "24px 32px 48px"
+        },
+        html: `<!-- WEALTH BANK TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealth Bank</title>
+  <style>
+    :root {
+      --color-brand: #1E3A5F;
+      --color-accent: #d4af37;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: Inter, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: #f8f9fa; padding: 32px 16px; display: flex; justify-content: center; }
+    .phone { width: 390px; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .header { background: linear-gradient(135deg, var(--color-brand), #16213e); padding: 32px 24px; color: #fff; }
+    .balance { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin: 16px 0; }
+    .cta { background: var(--color-accent); color: #16213e; border: none; padding: 16px 24px; border-radius: 12px; font-weight: 700; cursor: pointer; margin-top: 24px; }
+    .card { background: #fff; margin: 24px 16px; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .card h2 { font-size: 1.125rem; margin-bottom: 16px; color: var(--color-brand); }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <div style="font-size: 0.875rem; opacity: 0.7;">Total Portfolio Value</div>
+      <div class="balance">€2,847,350</div>
+      <div style="font-size: 1rem; opacity: 0.85;">+€24,680 (0.87%) today</div>
+      <button class="cta">Speak to Your Advisor</button>
+    </div>
+    <div class="card">
+      <h2>Portfolio Performance</h2>
+      <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+        <div style="text-align: center;">
+          <div style="font-size: 0.875rem; color: #6B7280; margin-bottom: 4px;">YTD Return</div>
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #16a34a;">+12.4%</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 0.875rem; color: #6B7280; margin-bottom: 4px;">Risk Score</div>
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;">6.2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`
+      },
+      
+      "mass-market": {
+        name: "Mass-Market Bank",
+        tokens: {
+          colorBrand: "#16a34a",
+          colorAccent: "#059669",
+          fontBody: "Inter, sans-serif",
+          space: "12px 16px 24px"
+        },
+        html: `<!-- MASS-MARKET BANK TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mass-Market Bank</title>
+  <style>
+    :root {
+      --color-brand: #16a34a;
+      --color-accent: #059669;
+      --font-body: Inter, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 24px 16px; display: flex; justify-content: center; }
+    .phone { width: 390px; background: #f0fdf4; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .header { background: linear-gradient(135deg, var(--color-brand), #15803d); padding: 20px; color: #fff; }
+    .balance { font-size: 1.75rem; font-weight: 700; margin: 12px 0; }
+    .actions { display: flex; gap: 12px; margin: 20px 16px; overflow-x: auto; }
+    .action { min-width: 72px; text-align: center; }
+    .action-icon { width: 56px; height: 56px; background: #fff; border-radius: 12px; display: grid; place-items: center; margin: 0 auto 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .action-label { font-size: 0.8125rem; font-weight: 600; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 16px 24px; }
+    .service { background: #fff; padding: 16px; border-radius: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <div style="font-size: 0.8125rem; opacity: 0.8;">Available Balance</div>
+      <div class="balance">KSh 42,850</div>
+    </div>
+    <div class="actions">
+      <div class="action">
+        <div class="action-icon" style="background: var(--color-brand); color: #fff;">💸</div>
+        <div class="action-label">Send Money</div>
+      </div>
+      <div class="action">
+        <div class="action-icon">📱</div>
+        <div class="action-label">Buy Airtime</div>
+      </div>
+      <div class="action">
+        <div class="action-icon">💡</div>
+        <div class="action-label">Pay Bills</div>
+      </div>
+    </div>
+    <div style="padding: 0 16px 24px;">
+      <h2 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Services</h2>
+      <div class="services">
+        <div class="service">Safaricom<br/>Airtime</div>
+        <div class="service">Kenya<br/>Power</div>
+        <div class="service">School<br/>Fees</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`
+      },
+      
+      neobank: {
+        name: "Neobank",
+        tokens: {
+          colorBrand: "#8b5cf6",
+          colorAccent: "#ec4899",
+          fontBody: "Inter, sans-serif",
+          space: "16px 20px 32px"
+        },
+        html: `<!-- NEOBANK TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neobank</title>
+  <style>
+    :root {
+      --color-brand: #8b5cf6;
+      --color-accent: #ec4899;
+      --font-body: Inter, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: linear-gradient(135deg, #faf5ff, #fce7f3); padding: 24px 16px; display: flex; justify-content: center; }
+    .phone { width: 390px; background: #faf5ff; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(139,92,246,0.15); }
+    .header { background: linear-gradient(135deg, var(--color-brand), var(--color-accent)); padding: 24px 20px; color: #fff; }
+    .balance { font-size: 2rem; font-weight: 700; margin: 12px 0; }
+    .feed { padding: 20px; }
+    .feed-item { background: #fff; padding: 16px; border-radius: 12px; margin-bottom: 12px; border: 1px solid #e9d5ff; }
+    .feed-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--color-brand), var(--color-accent)); }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <div style="font-size: 0.875rem; opacity: 0.8;">Total Balance</div>
+      <div class="balance">$12,450</div>
+      <div style="font-size: 0.9375rem; opacity: 0.9;">+$340 this week 🚀</div>
+    </div>
+    <div class="feed">
+      <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 16px;">Your Feed</h2>
+      <div class="feed-item">
+        <div class="feed-header">
+          <div class="avatar"></div>
+          <div>
+            <div style="font-weight: 600;">You earned $15</div>
+            <div style="font-size: 0.875rem; color: #6B7280;">Cashback from Starbucks</div>
+          </div>
+        </div>
+      </div>
+      <div class="feed-item">
+        <div class="feed-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+          <div>
+            <div style="font-weight: 600;">Paid $45</div>
+            <div style="font-size: 0.875rem; color: #6B7280;">Netflix subscription</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`
+      },
+      
+      kenya: {
+        name: "Kenya Transaction Bank",
+        tokens: {
+          colorBrand: "#16a34a",
+          colorOrange: "#f97316",
+          fontBody: "Inter, sans-serif",
+          space: "12px 16px 20px"
+        },
+        html: `<!-- KENYA TRANSACTION BANK TEMPLATE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimbaBank Kenya</title>
+  <style>
+    :root {
+      --color-brand: #16a34a;
+      --color-orange: #f97316;
+      --font-body: Inter, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 24px 16px; display: flex; justify-content: center; }
+    .phone { width: 390px; background: #f0fdf4; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .header { background: linear-gradient(135deg, var(--color-brand), #15803d); padding: 20px; color: #fff; }
+    .balance { font-size: 1.75rem; font-weight: 700; margin: 8px 0; }
+    .actions { display: flex; gap: 12px; margin: 20px 16px; overflow-x: auto; }
+    .action { min-width: 72px; text-align: center; }
+    .action-icon { width: 56px; height: 56px; background: #fff; border-radius: 12px; display: grid; place-items: center; margin: 0 auto 8px; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 16px 24px; }
+    .service { background: #fff; padding: 16px; border-radius: 12px; text-align: center; font-size: 0.8125rem; font-weight: 600; }
+    .promo { background: linear-gradient(135deg, var(--color-orange), #ea580c); padding: 20px; margin: 0 16px 24px; border-radius: 16px; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="header">
+      <div style="font-size: 0.8125rem; opacity: 0.8;">Available Balance</div>
+      <div class="balance">KSh 42,850</div>
+      <div style="font-size: 0.8125rem; opacity: 0.75;">Account • 0123456789</div>
+    </div>
+    <div class="actions">
+      <div class="action">
+        <div class="action-icon" style="background: var(--color-brand); color: #fff; font-size: 1.5rem;">💸</div>
+        <div style="font-size: 0.8125rem; font-weight: 600;">Send Money</div>
+      </div>
+      <div class="action">
+        <div class="action-icon" style="background: linear-gradient(135deg, var(--color-orange), #ea580c); color: #fff; font-size: 1.5rem;">📱</div>
+        <div style="font-size: 0.8125rem; font-weight: 600;">Buy Airtime</div>
+      </div>
+      <div class="action">
+        <div class="action-icon" style="font-size: 1.5rem;">💡</div>
+        <div style="font-size: 0.8125rem; font-weight: 600;">Pay Bills</div>
+      </div>
+      <div class="action">
+        <div class="action-icon" style="font-size: 1.5rem;">🛒</div>
+        <div style="font-size: 0.8125rem; font-weight: 600;">Shop</div>
+      </div>
+    </div>
+    <div style="padding: 0 16px 24px;">
+      <h2 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Services</h2>
+      <div class="services">
+        <div class="service">Safaricom<br/>Airtime</div>
+        <div class="service">Airtel<br/>Airtime</div>
+        <div class="service">DStv<br/>Packages</div>
+        <div class="service">Kenya<br/>Power</div>
+        <div class="service">Nairobi<br/>Water</div>
+        <div class="service">School<br/>Fees</div>
+      </div>
+    </div>
+    <div class="promo">
+      <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Get 5% Back on All Bills!</div>
+      <div style="font-size: 0.9375rem; margin-bottom: 16px; opacity: 0.9;">Pay your Kenya Power, water, or airtime bills and earn cashback instantly.</div>
+      <button style="background: #fff; color: var(--color-orange); border: none; padding: 12px 20px; border-radius: 999px; font-weight: 700; cursor: pointer;">Pay Now →</button>
+    </div>
+  </div>
+</body>
+</html>`
+      }
+    };
+
+    // ========== UI STATE ==========
+    let currentCode = '';
+    let history = [];
+
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      // Preset chips
+      document.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const segment = chip.dataset.segment;
+          if (segment && BANK_TEMPLATES[segment]) {
+            generateApp(segment);
+          }
+        });
+      });
+
+      // Generate button
+      document.getElementById('generate-btn').addEventListener('click', () => {
+        const prompt = document.getElementById('prompt-input').value.trim();
+        if (!prompt) {
+          alert('Please enter a prompt or select a preset');
+          return;
+        }
+        // For custom prompts, default to wealth template
+        generateApp('wealth', prompt);
+      });
+
+      // Copy button
+      document.getElementById('copy-btn').addEventListener('click', () => {
+        if (!currentCode) return;
+        navigator.clipboard.writeText(currentCode);
+        const btn = document.getElementById('copy-btn');
+        const span = btn.querySelector('span');
+        span.textContent = 'Copied!';
+        setTimeout(() => span.textContent = 'Copy', 2000);
+      });
+
+      // Reset button
+      document.getElementById('reset-btn').addEventListener('click', () => {
+        document.getElementById('preview-placeholder').style.display = 'flex';
+        document.getElementById('preview-iframe').style.display = 'none';
+        document.getElementById('code-display').textContent = '<!-- Your generated app code will appear here -->';
+        currentCode = '';
+      });
+    });
+
+    // ========== GENERATE APP (NO BACKEND) ==========
+    function generateApp(segment, customPrompt = '') {
+      const template = BANK_TEMPLATES[segment];
+      if (!template) return;
+
+      // Show steps
+      const steps = document.getElementById('gen-steps');
+      steps.style.display = 'block';
+      document.getElementById('generate-btn').disabled = true;
+
+      // Step 1: Analyze
+      setStepActive('step-analyse');
+      setTimeout(() => {
+        setStepComplete('step-analyse');
+        setStepActive('step-tokens');
+        
+        // Step 2: Tokens
+        setTimeout(() => {
+          setStepComplete('step-tokens');
+          setStepActive('step-build');
+          
+          // Step 3: Build (simulate typing)
+          setTimeout(() => {
+            setStepComplete('step-build');
+            currentCode = template.html;
+            
+            // Animate code typing
+            animateCodeTyping(currentCode, () => {
+              // Render preview
+              renderPreview(currentCode);
+              
+              // Add to history
+              addToHistory(template.name, customPrompt || template.name);
+              
+              // Reset UI
+              steps.style.display = 'none';
+              document.getElementById('generate-btn').disabled = false;
+            });
+          }, 800);
+        }, 800);
+      }, 800);
+    }
+
+    function setStepActive(stepId) {
+      const step = document.getElementById(stepId);
+      step.classList.add('active');
+      step.querySelector('.step-icon').textContent = '◉';
+    }
+
+    function setStepComplete(stepId) {
+      const step = document.getElementById(stepId);
+      step.classList.remove('active');
+      step.classList.add('complete');
+      step.querySelector('.step-icon').textContent = '✓';
+    }
+
+    function animateCodeTyping(code, callback) {
+      const codeDisplay = document.getElementById('code-display');
+      const loading = document.getElementById('code-loading');
+      
+      loading.style.display = 'block';
+      
+      // Simulate line-by-line typing
+      const lines = code.split('\n');
+      let currentLine = 0;
+      let displayedCode = '';
+      
+      const interval = setInterval(() => {
+        if (currentLine < lines.length) {
+          displayedCode += lines[currentLine] + '\n';
+          codeDisplay.textContent = displayedCode;
+          hljs.highlightElement(codeDisplay);
+          currentLine++;
+          
+          // Auto-scroll code panel
+          const codePanel = document.querySelector('.code-panel .panel-content');
+          codePanel.scrollTop = codePanel.scrollHeight;
+        } else {
+          clearInterval(interval);
+          loading.style.display = 'none';
+          callback();
+        }
+      }, 15); // 15ms per line for smooth typing
+    }
+
+    function renderPreview(html) {
+      const iframe = document.getElementById('preview-iframe');
+      const placeholder = document.getElementById('preview-placeholder');
+      
+      iframe.srcdoc = html;
+      iframe.style.display = 'block';
+      placeholder.style.display = 'none';
+    }
+
+    function addToHistory(name, prompt) {
+      history.unshift({ name, prompt, timestamp: new Date() });
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const historyList = document.getElementById('history-list');
+      if (history.length === 0) {
+        historyList.innerHTML = '<div style="opacity: 0.5; font-size: 0.875rem;">No history yet</div>';
+        return;
+      }
+      
+      historyList.innerHTML = history.map((item, i) => `
+        <div class="history-item" style="padding: 12px; background: rgba(255,255,255,0.5); border-radius: 8px; margin-bottom: 8px; cursor: pointer; font-size: 0.875rem;">
+          <div style="font-weight: 600; margin-bottom: 4px;">${item.name}</div>
+          <div style="opacity: 0.7; font-size: 0.8125rem;">${new Date(item.timestamp).toLocaleTimeString()}</div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
